@@ -191,7 +191,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Oops 一言接口失效了！"></span>
+            <span id="subtitle" data-typed-text="Welcome to &lt;a href=&#39;https://hjc.is-a.dev/&#39;&gt;my blog&lt;/a&gt;!"></span>
           
         </div>
 
@@ -237,7 +237,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2025/01/29/%E3%80%90%E6%95%99%E7%A8%8B%E3%80%91%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E9%85%8DGitHub-Pages%E6%90%AD%E5%BB%BA0%E6%88%90%E6%9C%AC%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_self">
         <div>
-          0️⃣.准备工作1.一个Github账号（应该都有）如果没有可以去GitHub官网 注册一下～ 2.安装GitWindows:访问Git For Windows下载链接
+          0.准备工作1.一个Github账号（应该都有）如果没有可以去GitHub官网 注册一下～  2.安装GitWindows:访问Git For Windows下载链接  按需选择32-Bit &#x2F; 64-Bit，如下载过慢请科学上网。  macOS:直接打开终端，输入git回车，如果已安装会看到下图界面，反之则会跳出命令行工具Command Tools的安装弹窗，直接点击安装即可。  Li
         </div>
       </a>
 
@@ -350,37 +350,7 @@
       }
       var text = subtitle.getAttribute('data-typed-text');
       
-        jQuery.ajax({
-          type: 'GET',
-          url: 'https://v1.hitokoto.cn/?c=i',
-          headers: {},
-          dataType: 'json',
-          success: function(result) {
-            var apiText;
-            if (result) {
-              var keys = 'hitokoto'.split(',');
-              if (result instanceof Array) {
-                result = result[0];
-              }
-              for (const k of keys) {
-                var value = result[k];
-                if (typeof value === 'string') {
-                  apiText = value;
-                  break;
-                } else if (value instanceof Object) {
-                  result = value;
-                }
-              }
-            }
-            apiText ? typing(apiText) : typing(text);
-          },
-          error: function(xhr, status, error) {
-            if (error) {
-              console.error('Failed to request https://v1.hitokoto.cn/?c=i:', error);
-            }
-            typing(text);
-          }
-        })
+        typing(text);
       
     })(window, document);
   </script>
